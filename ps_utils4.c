@@ -6,7 +6,7 @@
 /*   By: yahamdan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 13:24:56 by yahamdan          #+#    #+#             */
-/*   Updated: 2023/01/31 15:47:00 by yahamdan         ###   ########.fr       */
+/*   Updated: 2023/02/04 23:08:16 by yahamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	sort_help(t_list **stack_a, t_list **stack_b, int size, int *arr)
 	while (*stack_a)
 	{
 		if ((*stack_a)->data <= arr[size -1]
-			&& (*stack_a)->data < ft_lstsize(*stack_a) / 2)
+			&& (*stack_a)->data < arr[size / 2])
 			push_b(stack_a, stack_b);
 		else if ((*stack_a)->data <= arr[size -1]
-			&& (*stack_a)->data >= ft_lstsize(*stack_a) / 2)
+			&& (*stack_a)->data >= arr[size / 2])
 		{
 			push_b(stack_a, stack_b);
 			rotate_b(stack_b);
@@ -69,26 +69,4 @@ void	help_sfh(t_list **stack_a, t_list **stack_b, int *arr, int i)
 		else if (ft_search1(stack_a, arr[(45 * i) - 1]) < size / 2)
 			rotate_a(stack_a);
 	}
-}
-
-void	sort_all(t_list **stack_a, t_list **stack_b)
-{
-	int	*arr;
-	int	size;
-	int	size1;
-
-	arr = ft_sort_int_tab(lst_in_tab(*stack_a));
-	size = ft_lstsize(*stack_a);
-	while (*stack_a)
-	{
-		size1 = ft_lstsize(*stack_a) / 2;
-		if ((*stack_a)->data <= arr[size -1] && (*stack_a)->data <= size1)
-			push_b(stack_a, stack_b);
-		else if ((*stack_a)->data <= arr[size -1] && (*stack_a)->data >= size1)
-		{
-			push_b(stack_a, stack_b);
-			rotate_b(stack_b);
-		}
-	}
-	push_to_a(stack_a, stack_b);
 }

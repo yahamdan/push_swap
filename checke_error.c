@@ -6,34 +6,20 @@
 /*   By: yahamdan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 12:07:59 by yahamdan          #+#    #+#             */
-/*   Updated: 2023/01/31 16:07:14 by yahamdan         ###   ########.fr       */
+/*   Updated: 2023/02/04 23:07:47 by yahamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	if_duplicate(int *arr, t_list **stack_a)
+int	if_duplicate(t_list *stack_a, int b)
 {
-	int		i;
-	int		j;
-	int		k;
-	t_list	*t;
-
-	i = 0;
-	t = *stack_a;
-	k = ft_lstsize(t);
-	while (arr[i])
+	while (stack_a)
 	{
-		j = i + 1;
-		while (j < k)
-		{
-			if (arr[i] == arr[j])
-				ft_error(1);
-			j++;
-		}
-		i++;
+		if (stack_a->data == b)
+			ft_error(1);
+		stack_a = stack_a->next;
 	}
-	free(arr);
 	return (0);
 }
 
@@ -44,7 +30,7 @@ void	ft_isdigit(char *sp)
 	i = 0;
 	while (sp[i])
 	{
-		if (sp[0] == '+' || (sp[0] == '-' && sp[1] != '\0'))
+		if ((sp[0] == '-' || sp[0] == '+') && sp[1] != '\0')
 			i++;
 		while (sp[i] >= 48 && sp[i] <= 57)
 			i++;

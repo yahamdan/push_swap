@@ -6,7 +6,7 @@
 /*   By: yahamdan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 13:07:30 by yahamdan          #+#    #+#             */
-/*   Updated: 2023/01/31 15:06:28 by yahamdan         ###   ########.fr       */
+/*   Updated: 2023/02/04 23:07:37 by yahamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	get_opt_h(char *str, t_list **stack_a, t_list **stack_b)
 		ra_rb(stack_a);
 	else if (ft_strcmp(str, "rb\n") == 0)
 		ra_rb(stack_b);
+	else if (ft_strcmp(str, "rr\n") == 0)
+		r_ab(stack_a, stack_b);
 	else if (ft_strcmp(str, "rra\n") == 0)
 		rra_rrb(stack_a);
 	else if (ft_strcmp(str, "rrb\n") == 0)
@@ -71,7 +73,7 @@ int	main(int ac, char **av)
 			ft_error(1);
 		checkandlst(sp, &stack_a);
 		i++;
-	}	
+	}
 	get_opt(&stack_a, &stack_b);
 	if (check_if_sorted(stack_a) == 1)
 		write(1, "OK\n", 3);

@@ -6,7 +6,7 @@
 /*   By: yahamdan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:03:17 by yahamdan          #+#    #+#             */
-/*   Updated: 2023/01/30 19:04:40 by yahamdan         ###   ########.fr       */
+/*   Updated: 2023/02/04 21:51:08 by yahamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	sort_h(t_list **stack_a, t_list **stack_b)
 	int	size;
 
 	i = 1;
-	arr = ft_sort_int_tab(lst_in_tab(*stack_a));
+	arr = ft_sort_int_tab(lst_in_tab(*stack_a), ft_lstsize(*stack_a));
 	size = ft_lstsize(*stack_a);
 	while (*stack_a)
 	{
@@ -105,7 +105,7 @@ void	sort_fh(t_list **stack_a, t_list **stack_b)
 	int	*arr;
 
 	i = 1;
-	arr = ft_sort_int_tab(lst_in_tab(*stack_a));
+	arr = ft_sort_int_tab(lst_in_tab(*stack_a), ft_lstsize(*stack_a));
 	size = ft_lstsize(*stack_a);
 	while (*stack_a)
 	{

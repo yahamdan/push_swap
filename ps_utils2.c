@@ -6,7 +6,7 @@
 /*   By: yahamdan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 20:28:36 by yahamdan          #+#    #+#             */
-/*   Updated: 2023/01/30 19:29:35 by yahamdan         ###   ########.fr       */
+/*   Updated: 2023/02/04 21:52:43 by yahamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	push_to_a(t_list **stack_a, t_list **stack_b)
 	int	i;
 	int	*arr;
 
-	arr = ft_sort_int_tab(lst_in_tab(*stack_b));
+	arr = ft_sort_int_tab(lst_in_tab(*stack_b), ft_lstsize(*stack_b));
 	i = ft_lstsize(*stack_b) - 1;
 	c = sm_hpusha(stack_a, stack_b, arr, &i);
 	while (c > 0)

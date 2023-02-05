@@ -6,7 +6,7 @@
 /*   By: yahamdan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 20:30:53 by yahamdan          #+#    #+#             */
-/*   Updated: 2023/01/31 14:42:34 by yahamdan         ###   ########.fr       */
+/*   Updated: 2023/02/04 22:19:11 by yahamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void	checkandlst(char **sp, t_list **stack_a)
 	j = 0;
 	while (sp[j])
 	{
+		if_duplicate(*stack_a, ft_atoi(sp[j]));
 		ft_lstadd_back(stack_a, ft_lstnew(ft_atoi(sp[j])));
 		free(sp[j]);
 		j++;

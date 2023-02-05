@@ -6,7 +6,7 @@
 /*   By: yahamdan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 17:23:29 by yahamdan          #+#    #+#             */
-/*   Updated: 2023/01/30 17:08:21 by yahamdan         ###   ########.fr       */
+/*   Updated: 2023/02/04 23:09:08 by yahamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ t_list	*ft_lstnew(int content);
 void	free_me(char **p, int j);
 int		get_pos(int a, int *arr);
 t_list	*ft_lstlast(t_list *lst);
-int		*ft_sort_int_tab(int *tab);
+int		*ft_sort_int_tab(int *tab, int size);
 char	**ft_split(char *s, char c);
 t_list	*ft_lstbfrlast(t_list *lst);
 void	sort_three(t_list **stack_a);
@@ -62,7 +62,7 @@ void	splited(char *s, char **p, char c);
 int		ft_search1(t_list **stack_a, int nb);
 void	push(t_list **stack_b, t_list **stack_a);
 void	checkandlst(char **sp, t_list **stack_a);
-int		if_duplicate(int *arr, t_list **stack_a);
+int		if_duplicate(t_list *stack_a, int b);
 void	sort_(t_list **stack_a, t_list **stack_b);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	sort_h(t_list **stack_a, t_list **stack_b);
@@ -70,7 +70,6 @@ void	ft_lstadd_front(t_list **lst, t_list *new);
 void	push_a(t_list **stack_a, t_list **stack_b);
 void	push_b(t_list **stack_a, t_list **stack_b);
 void	sort_fh(t_list **stack_a, t_list **stack_b);
-void	sort_all(t_list **stack_a, t_list **stack_b);
 void	push_to_a(t_list **stack_a, t_list **stack_b);
 void	sort_five(t_list **stack_a, t_list **stack_b);
 void	rotpush(t_list **stack_a, t_list **stack_b, int *c);

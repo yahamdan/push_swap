@@ -6,7 +6,7 @@
 /*   By: yahamdan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 18:31:28 by yahamdan          #+#    #+#             */
-/*   Updated: 2023/01/31 16:10:49 by yahamdan         ###   ########.fr       */
+/*   Updated: 2023/02/04 23:08:25 by yahamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,8 @@ void	sort_(t_list **stack_a, t_list **stack_b)
 		sort_five(stack_a, stack_b);
 	else if (ft_lstsize(*stack_a) <= 100)
 		sort_h(stack_a, stack_b);
-	else if (ft_lstsize(*stack_a) <= 500)
-		sort_fh(stack_a, stack_b);
 	else
-		sort_all(stack_a, stack_b);
+		sort_fh(stack_a, stack_b);
 }
 
 int	main(int ac, char **av)
@@ -60,6 +58,5 @@ int	main(int ac, char **av)
 		checkandlst(sp, &stack_a);
 		i++;
 	}
-	if_duplicate(lst_in_tab(stack_a), &stack_a);
 	sort_(&stack_a, &stack_b);
 }

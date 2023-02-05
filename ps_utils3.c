@@ -6,7 +6,7 @@
 /*   By: yahamdan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 19:30:41 by yahamdan          #+#    #+#             */
-/*   Updated: 2023/01/30 19:36:01 by yahamdan         ###   ########.fr       */
+/*   Updated: 2023/02/04 21:48:37 by yahamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,21 +61,17 @@ void	swapp(int *a, int *b)
 	*b = tmp;
 }
 
-int	*ft_sort_int_tab(int *tab)
+int	*ft_sort_int_tab(int *tab, int size)
 {
 	int	i;
 	int	j;
-	int	size;
 
-	size = 0;
 	i = 0;
-	while (tab[size])
-		size++;
 	while (i < size)
 	{
 		j = i + 1;
 		while (j < size)
-		{	
+		{
 			if (tab[j] < tab[i])
 			{
 				swapp(&tab[i], &tab[j]);
@@ -84,6 +80,7 @@ int	*ft_sort_int_tab(int *tab)
 		}
 		i++;
 	}
+	j = 0;
 	return (tab);
 }
 
@@ -92,7 +89,7 @@ int	get_pos(int a, int *arr)
 	int	i;
 
 	i = 0;
-	while (arr && arr[i] && a != arr[i])
+	while (a != arr[i])
 		i++;
 	free(arr);
 	return (i);
